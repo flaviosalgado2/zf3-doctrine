@@ -2,6 +2,7 @@
 
 namespace User;
 
+use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Zend\Router\Http\Literal;
 use User\Controller;
 
@@ -33,6 +34,22 @@ return [
     'view_manager' => [
         'template_path_stack' => [
             'user' => __DIR__ . "/../view"
+        ]
+    ],
+    'doctrine' => [
+        'driver' => [
+            'User_driver' => [
+                'class' => AnnotationDriver::class,
+                'cache' => 'array',
+                'paths' => [
+                    __DIR__ . '/../src/Entity'
+                ]
+            ],
+            'orm_default' => [
+                'drivers' => [
+                    'Users\Entity' => 'User_driver'
+                ]
+            ]
         ]
     ]
 ];
