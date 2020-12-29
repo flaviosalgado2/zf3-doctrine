@@ -47,9 +47,12 @@ return [
             ],
             'orm_default' => [
                 'drivers' => [
-                    'Users\Entity' => 'User_driver'
+                    'User\Entity' => 'User_driver'
                 ]
             ]
+        ],
+        'fixtures' => [
+            'UserFixture' => __DIR__ . '/../src/Fixture'
         ]
     ]
 ];
