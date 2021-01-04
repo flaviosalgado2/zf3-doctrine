@@ -8,12 +8,15 @@
       <sourceFolder url="file://$MODULE_DIR$/module/User/src" isTestSource="false" packagePrefix="User\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codeedu/zend-doctrine-fixture" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codeedu/zendexpr-doctrine-fixture" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/container-interop/container-interop" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/data-fixtures" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-module" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-orm-module" />
@@ -73,7 +76,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-config" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-console" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-db" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-db_compare" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-developer-tools" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-di" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-diactoros" />

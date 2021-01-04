@@ -1,5 +1,104 @@
 [
     {
+        "name": "codeedu/zend-doctrine-fixture",
+        "version": "0.0.2",
+        "version_normalized": "0.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/codeedu/zend-doctrine-fixture.git",
+            "reference": "3d8eea75e7e2b4693a21681be7702484e8b56470"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/codeedu/zend-doctrine-fixture/zipball/3d8eea75e7e2b4693a21681be7702484e8b56470",
+            "reference": "3d8eea75e7e2b4693a21681be7702484e8b56470",
+            "shasum": ""
+        },
+        "require": {
+            "codeedu/zendexpr-doctrine-fixture": "0.0.2",
+            "php": "^5.6 || ^7.0",
+            "zendframework/zend-modulemanager": "^2.7"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.0.0"
+        },
+        "time": "2019-01-08T18:42:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CodeEdu\\DoctrineFixture\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Luiz",
+                "email": "argentinaluiz@gmail.com"
+            }
+        ],
+        "description": "Zend Library that provides Doctrine Data-Fixture functionality",
+        "keywords": [
+            "Fixture",
+            "doctrine",
+            "zf2",
+            "zf3"
+        ]
+    },
+    {
+        "name": "codeedu/zendexpr-doctrine-fixture",
+        "version": "0.0.2",
+        "version_normalized": "0.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/codeedu/zendexpr-doctrine-fixture.git",
+            "reference": "aff7e71d3b489e7be64a047d8742fb7ce7702985"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/codeedu/zendexpr-doctrine-fixture/zipball/aff7e71d3b489e7be64a047d8742fb7ce7702985",
+            "reference": "aff7e71d3b489e7be64a047d8742fb7ce7702985",
+            "shasum": ""
+        },
+        "require": {
+            "container-interop/container-interop": "~1.0",
+            "doctrine/data-fixtures": "^1.3",
+            "doctrine/orm": "~2.5",
+            "php": "^5.6 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "6.0.0"
+        },
+        "time": "2019-01-08T18:20:59+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CodeEdu\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Luiz",
+                "email": "argentinaluiz@gmail.com"
+            }
+        ],
+        "description": "Zend Expressive Library that provides Doctrine Data-Fixture functionality",
+        "keywords": [
+            "Fixture",
+            "doctrine",
+            "expressive",
+            "zend-expressive"
+        ]
+    },
+    {
         "name": "composer/package-versions-deprecated",
         "version": "1.11.99.1",
         "version_normalized": "1.11.99.1",
@@ -437,6 +536,85 @@
             },
             {
                 "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fcommon",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "doctrine/data-fixtures",
+        "version": "1.4.4",
+        "version_normalized": "1.4.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/data-fixtures.git",
+            "reference": "16a03fadb5473f49aad70384002dfd5012fe680e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/16a03fadb5473f49aad70384002dfd5012fe680e",
+            "reference": "16a03fadb5473f49aad70384002dfd5012fe680e",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": "^2.13|^3.0",
+            "doctrine/persistence": "^1.3.3|^2.0",
+            "php": "^7.2 || ^8.0"
+        },
+        "conflict": {
+            "doctrine/phpcr-odm": "<1.3.0"
+        },
+        "require-dev": {
+            "doctrine/coding-standard": "^6.0",
+            "doctrine/dbal": "^2.5.4",
+            "doctrine/mongodb-odm": "^1.3.0 || ^2.0.0",
+            "doctrine/orm": "^2.7.0",
+            "phpunit/phpunit": "^7.0"
+        },
+        "suggest": {
+            "alcaeus/mongo-php-adapter": "For using MongoDB ODM 1.3 with PHP 7 (deprecated)",
+            "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+            "doctrine/orm": "For loading ORM fixtures",
+            "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+        },
+        "time": "2020-09-01T07:13:28+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Doctrine\\Common\\DataFixtures\\": "lib/Doctrine/Common/DataFixtures"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            }
+        ],
+        "description": "Data Fixtures for all Doctrine Object Managers",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database"
+        ],
+        "funding": [
+            {
+                "url": "https://www.doctrine-project.org/sponsorship.html",
+                "type": "custom"
+            },
+            {
+                "url": "https://www.patreon.com/phpdoctrine",
+                "type": "patreon"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdata-fixtures",
                 "type": "tidelift"
             }
         ]

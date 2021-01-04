@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite64426d8e32d4af911063765e88ba2b6
+class ComposerStaticInit6bb98b05e145b7b402b13c30e54ea6eb
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -125,11 +125,17 @@ class ComposerStaticInite64426d8e32d4af911063765e88ba2b6
             'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\DataFixtures\\' => 29,
             'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
             'DeepCopy\\' => 9,
+        ),
+        'C' => 
+        array (
+            'CodeEdu\\DoctrineFixture\\' => 24,
+            'CodeEdu\\' => 8,
         ),
         'B' => 
         array (
@@ -430,6 +436,10 @@ class ComposerStaticInite64426d8e32d4af911063765e88ba2b6
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
+        'Doctrine\\Common\\DataFixtures\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures',
+        ),
         'Doctrine\\Common\\Collections\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/collections/lib/Doctrine/Common/Collections',
@@ -452,6 +462,14 @@ class ComposerStaticInite64426d8e32d4af911063765e88ba2b6
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'CodeEdu\\DoctrineFixture\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codeedu/zend-doctrine-fixture/src',
+        ),
+        'CodeEdu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codeedu/zendexpr-doctrine-fixture/src',
         ),
         'Blog\\' => 
         array (
@@ -1041,10 +1059,10 @@ class ComposerStaticInite64426d8e32d4af911063765e88ba2b6
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite64426d8e32d4af911063765e88ba2b6::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite64426d8e32d4af911063765e88ba2b6::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInite64426d8e32d4af911063765e88ba2b6::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInite64426d8e32d4af911063765e88ba2b6::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6bb98b05e145b7b402b13c30e54ea6eb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6bb98b05e145b7b402b13c30e54ea6eb::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit6bb98b05e145b7b402b13c30e54ea6eb::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit6bb98b05e145b7b402b13c30e54ea6eb::$classMap;
 
         }, null, ClassLoader::class);
     }

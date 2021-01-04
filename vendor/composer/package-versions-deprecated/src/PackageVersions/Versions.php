@@ -106,6 +106,9 @@ final class Versions
   'zendframework/zend-validator' => '2.13.0@b54acef1f407741c5347f2a97f899ab21f2229ef',
   'zendframework/zend-view' => '2.11.4@a8b1b2d9b52e191539be861a6529f8c8a0c06b9d',
   'zfcampus/zf-development-mode' => '3.2.0@419004a320bab017d28f2bc5e7857dde7e19aecf',
+  'codeedu/zend-doctrine-fixture' => '0.0.2@3d8eea75e7e2b4693a21681be7702484e8b56470',
+  'codeedu/zendexpr-doctrine-fixture' => '0.0.2@aff7e71d3b489e7be64a047d8742fb7ce7702985',
+  'doctrine/data-fixtures' => '1.4.4@16a03fadb5473f49aad70384002dfd5012fe680e',
   'myclabs/deep-copy' => '1.10.2@776f831124e9c62e1a2c601ecc52e776d8bb7220',
   'phar-io/manifest' => '1.0.3@7761fcacf03b4d4f16e7ccb606d4879ca431fcf4',
   'phar-io/version' => '2.0.1@45a2ec53a73c70ce41d55cedef9063630abaf1b6',
@@ -136,7 +139,7 @@ final class Versions
   'zendframework/zend-developer-tools' => '1.3.0@36ea185103bc6618ffe3e176194891940eabb8c3',
   'zendframework/zend-dom' => '2.7.2@66b8459e6f2c0d62ff4f4b16f2b44afdfd466aa0',
   'zendframework/zend-test' => '3.3.0@9cc4ab4c84a7da4c8035087253606b4f3ff1e72f',
-  'zendframework/skeleton-application' => 'dev-master@c732b47fdd5c133a77344f6eca9097e06bd3bd78',
+  'zendframework/skeleton-application' => 'dev-master@5cca180432c6eeae2e4093c8f805feacbbcc6d06',
 );
 
     private function __construct()
