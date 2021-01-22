@@ -259,6 +259,8 @@ class Command
             }
         }
 
+
+
         return is_numeric($statusCode) ? (int) $statusCode : 0;
     }
 
