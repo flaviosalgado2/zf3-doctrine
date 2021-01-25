@@ -16,6 +16,17 @@ return [
                     ]
                 ]
             ]
+        ],
+        'authentication' => [
+            'orm_default' => [
+                'object_manager' => \Doctrine\ORM\EntityManager::class,
+                'identity_class' => \User\Entity\User::class,
+                'identity_property' => 'username',
+                'credential_property' => 'password',
+                'credential_callable' => function (\User\Entity\User $user, $passwordSent) {
+                    return password_verify($passwordSent, $user->getPassword());
+                }
+            ]
         ]
     ]
 ];

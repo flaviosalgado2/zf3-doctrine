@@ -6,6 +6,8 @@ use Blog\Form\PostForm;
 use Blog\InputFilter\PostInputFilter;
 use Blog\Model\Post;
 use Blog\Model\PostTable;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityRepository;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Validator\Digits;
 use Zend\View\Model\ViewModel;
@@ -20,21 +22,24 @@ class BlogController extends AbstractActionController
     private $form;
 
     /**
+     * @var EntityRepository
+     */
+    private $repository;
+
+    /**
      * BlogController constructor.
      * @param PostTable $table
      */
-    public function __construct(PostTable $table, PostForm $form)
+    public function __construct(EntityRepository $repository, PostForm $form)
     {
-        $this->table = $table;
         $this->form = $form;
+        $this->repository = $repository;
     }
 
     public function indexAction()
     {
-        $postTable = $this->table;
-
         return new ViewModel([
-            'posts' => $postTable->fetchAll()
+            'posts' => $this->repository->findAll()
         ]);
     }
 
