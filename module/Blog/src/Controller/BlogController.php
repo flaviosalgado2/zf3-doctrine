@@ -27,13 +27,19 @@ class BlogController extends AbstractActionController
     private $repository;
 
     /**
+     * @var EntityManager
+     */
+    private $entityManager;
+
+    /**
      * BlogController constructor.
      * @param PostTable $table
      */
-    public function __construct(EntityRepository $repository, PostForm $form)
+    public function __construct(EntityManager $entityManager, EntityRepository $repository, PostForm $form)
     {
         $this->form = $form;
         $this->repository = $repository;
+        $this->entityManager = $entityManager;
     }
 
     public function indexAction()
@@ -89,9 +95,10 @@ class BlogController extends AbstractActionController
         }
 
         //modelo do meu dado ou objeto
-        $post = new Post();
-        $post->exchangeArray($form->getData());
-        $this->table->save($post);
+        $post = $form->getData();
+        $this->entityManager->persist($post);
+        $this->entityManager->flush();
+
         return $this->redirect()->toRoute('admin-blog/post');
 
     }

@@ -20,6 +20,6 @@ class BlogControllerFactory
         $repository = $entityManager->getRepository(Post::class);
         $postForm = $container->get(PostForm::class);
 
-        return new BlogController($repository, $postForm);
+        return new BlogController($entityManager, $repository, $postForm);
     }
 }
