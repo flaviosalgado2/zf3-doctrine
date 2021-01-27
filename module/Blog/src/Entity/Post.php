@@ -2,6 +2,8 @@
 
 namespace Blog\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,6 +22,33 @@ class Post
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="Blog\Entity\Comment", mappedBy="post", cascade={"persist", "remove"})
+     */
+    private $comments;
+
+    //contrutor da classe
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+    }
 
     /**
      * @return int|null
@@ -76,18 +105,10 @@ class Post
     }
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     * @return Collection
      */
-    private $title;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="text", nullable=false)
-     */
-    private $content;
-
-
+    public function getComments()
+    {
+        return $this->comments;
+    }
 }

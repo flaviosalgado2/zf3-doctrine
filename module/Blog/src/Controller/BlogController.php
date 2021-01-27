@@ -5,7 +5,6 @@ namespace Blog\Controller;
 use Blog\Form\PostForm;
 use Blog\InputFilter\PostInputFilter;
 use Blog\Model\Post;
-use Blog\Model\PostTable;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -15,10 +14,8 @@ use Zend\View\Model\ViewModel;
 class BlogController extends AbstractActionController
 {
     /**
-     * @var PostTable
+     * @var PostForm
      */
-    private $table;
-
     private $form;
 
     /**
@@ -107,13 +104,7 @@ class BlogController extends AbstractActionController
     {
         $id = (int)$this->params()->fromRoute('id', 0);
 
-        if (!$id) {
-            return $this->redirect()->toRoute('admin-blog/post');
-        }
-
-        try {
-            $post = $this->table->find($id);
-        } catch (\Exception $e) {
+        if (!$id || !($post = $this->repository->find($id))) {
             return $this->redirect()->toRoute('admin-blog/post');
         }
 
@@ -138,8 +129,7 @@ class BlogController extends AbstractActionController
             ];
         }
 
-        $this->table->save($post);
-
+        $this->entityManager->flush();
         return $this->redirect()->toRoute('admin-blog/post');
 
     }
@@ -148,12 +138,13 @@ class BlogController extends AbstractActionController
     {
         $id = (int)$this->params()->fromRoute('id', 0);
 
-        if (!$id) {
+        if (!$id || !($post = $this->repository->find($id))) {
             return $this->redirect()->toRoute('admin-blog/post');
 
         }
 
-        $this->table->delete($id);
+        $this->entityManager->remove($post);
+        $this->entityManager->flush();
 
         return $this->redirect()->toRoute('admin-blog/post');
     }
